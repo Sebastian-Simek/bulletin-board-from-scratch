@@ -17,6 +17,6 @@ userInputForm.addEventListener('submit', async (e) => {
         description: data.get('description'),
         contact: data.get('contact'),
     };
-    const resp = await userPosts(newPost);
-    console.log(resp);
+    userInputForm.reset();
+    await userPosts(newPost);
 });

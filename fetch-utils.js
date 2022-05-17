@@ -45,3 +45,12 @@ export async function userPosts(post) {
         console.error(response.error);
     }
 }
+
+export async function fetchPosts() {
+    const response = await client.from('craigslist_posts').select('*');
+    if (response.data) {
+        return response.data;
+    } else {
+        console.error(response.error);
+    }
+}

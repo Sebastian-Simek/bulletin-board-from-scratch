@@ -1,4 +1,4 @@
-import { logOut } from './fetch-utils.js';
+import { fetchPosts, logOut } from './fetch-utils.js';
 
 const loginBtn = document.getElementById('login');
 const createBtn = document.getElementById('create');
@@ -16,3 +16,5 @@ createBtn.addEventListener('click', () => {
 logOutBtn.addEventListener('click', async () => {
     await logOut();
 });
+
+console.log(fetchPosts());
