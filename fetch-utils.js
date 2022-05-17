@@ -31,7 +31,17 @@ export async function logOut() {
 }
 
 export async function ifLoggedIn() {
-    if (getUser()) {
+    const user = await getUser();
+    if (user) {
         location.replace('/');
+    }
+}
+
+export async function userPosts(post) {
+    const response = await client.from('craigslist_posts').insert(post);
+    if (response.data) {
+        return response.data;
+    } else {
+        console.error(response.error);
     }
 }

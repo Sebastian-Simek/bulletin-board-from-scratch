@@ -25,4 +25,4 @@ oldUser.addEventListener('submit', async (e) => {
     }
 });
 
-// ifLoggedIn();
+ifLoggedIn();
