@@ -1,1 +1,21 @@
-/* add home page styles here */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 10%;
+}
+
+#main  {
+    display: flex;
+    justify-content: space-around;
+}
+
+#sign-in {
+    display: flex;
+    flex-direction: column;
+}
+
+#sign-up {
+    display: flex;
+    flex-direction: column;
+}

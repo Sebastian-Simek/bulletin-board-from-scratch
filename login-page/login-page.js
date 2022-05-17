@@ -1,4 +1,4 @@
-import { signUpUser, signInUser } from '../fetch-utils.js';
+import { signUpUser, signInUser, ifLoggedIn } from '../fetch-utils.js';
 const homeBtn = document.getElementById('home');
 const newUser = document.getElementById('sign-up');
 const oldUser = document.getElementById('sign-in');
@@ -24,3 +24,5 @@ oldUser.addEventListener('submit', async (e) => {
         location.replace('../create-page');
     }
 });
+
+// ifLoggedIn();

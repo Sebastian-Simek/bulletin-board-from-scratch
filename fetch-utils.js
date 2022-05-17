@@ -29,3 +29,9 @@ export async function logOut() {
     await client.auth.signOut();
     return (window.location.href = '/');
 }
+
+export async function ifLoggedIn() {
+    if (getUser()) {
+        location.replace('/');
+    }
+}
