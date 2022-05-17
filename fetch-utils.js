@@ -3,7 +3,25 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-export async function signupUser(email, password) {
+// I still don't understand this!!!!!!!
+export async function getUser() {
+    return client.auth.session() && client.auth.session().user;
+}
+
+export async function signUpUser(email, password) {
     const response = await client.auth.signUp({ email, password });
     return response.user;
+}
+
+export async function signInUser(email, password) {
+    const response = await client.auth.signIn({ email, password });
+    return response.user;
+}
+
+export async function authUser() {
+    const user = await getUser();
+    console.log(user);
+    if (!user) {
+        location.replace('../login-page');
+    }
 }
