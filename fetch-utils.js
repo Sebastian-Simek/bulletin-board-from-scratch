@@ -20,8 +20,12 @@ export async function signInUser(email, password) {
 
 export async function authUser() {
     const user = await getUser();
-    console.log(user);
     if (!user) {
         location.replace('../login-page');
     }
+}
+
+export async function logOut() {
+    await client.auth.signOut();
+    return (window.location.href = '/');
 }

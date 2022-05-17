@@ -1,5 +1,8 @@
+import { logOut } from './fetch-utils.js';
+
 const loginBtn = document.getElementById('login');
 const createBtn = document.getElementById('create');
+const logOutBtn = document.getElementById('logout');
 
 
 loginBtn.addEventListener('click', () => {
@@ -8,4 +11,8 @@ loginBtn.addEventListener('click', () => {
 
 createBtn.addEventListener('click', () => {
     location.replace('./create-page');
+});
+
+logOutBtn.addEventListener('click', async () => {
+    await logOut();
 });
