@@ -2,7 +2,7 @@ const SUPABASE_URL = 'https://aqordevvnruktzytnrtm.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFxb3JkZXZ2bnJ1a3R6eXRucnRtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTIyOTc4ODUsImV4cCI6MTk2Nzg3Mzg4NX0.paVZTcltRhN61IqrwWNRAkNdX3pf7FOsHUYHh2DnJ_8';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-const loginButton = document.getElementById('login');
+// const loginButton = document.getElementById('login');
 
 // I still don't understand this!!!!!!!
 export async function getUser() {
@@ -32,10 +32,8 @@ export async function logOut() {
 }
 
 export async function ifLoggedIn() {
-    const user = await getUser();
-    if (user) {
-        loginButton.textContent = 'LOGOUT';
-        window.location.href = '/';
+    if (await getUser()) {
+        location.replace('/');
     }
 }
 

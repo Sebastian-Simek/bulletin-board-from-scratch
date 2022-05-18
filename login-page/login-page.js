@@ -1,11 +1,7 @@
-import { signUpUser, signInUser, ifLoggedIn } from '../fetch-utils.js';
-const homeBtn = document.getElementById('home');
+import { signUpUser, signInUser, ifLoggedIn, } from '../fetch-utils.js';
 const newUser = document.getElementById('sign-up');
 const oldUser = document.getElementById('sign-in');
 
-homeBtn.addEventListener('click', () => {
-    location.replace('../');
-});
 
 newUser.addEventListener('submit', async (e) => {
     e.preventDefault();
