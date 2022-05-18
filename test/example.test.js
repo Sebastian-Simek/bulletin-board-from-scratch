@@ -1,18 +1,19 @@
 // IMPORT MODULES under test here:
-// import { example } from '../example.js';
+import { fetchPosts } from '../fetch-utils.js';
+
+import { renderPosts } from '../render-utils.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('Testing renderPosts function', async (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = true;
-    
+    const expected = `<div><ul><li>My test poast</li><li>This will be a test post</li><li>sebastian@sebastian.com</li></ul></div>`;
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = true;
-
+    const fetch = await fetchPosts([0]);
+    const actual = renderPosts(fetch);
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.equal(actual.outerHTML, expected);
 });

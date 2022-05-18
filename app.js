@@ -17,4 +17,9 @@ logOutBtn.addEventListener('click', async () => {
     await logOut();
 });
 
-console.log(fetchPosts());
+async function onLoad() {
+    const data = await fetchPosts;
+    const myPost = data[0];
+    console.log(myPost);
+}
+onLoad();
