@@ -1,8 +1,38 @@
-// import functions and grab DOM elements
+import { fetchPosts, logOut, getUser } from './fetch-utils.js';
+import { renderPosts } from './render-utils.js';
 
-// let state
+const loginBtn = document.getElementById('login');
+const createBtn = document.getElementById('create');
+const postListContainer = document.getElementById('display-div');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+window.addEventListener('load', async () => {
+    const user = await getUser();
+    if (user) {
+        loginBtn.textContent = 'LOGOUT';
+        loginBtn.addEventListener('click', async () => {
+            await logOut();
+        });
+    } else {
+        loginBtn.textContent = 'LOGIN';
+        loginBtn.addEventListener('click', () => {
+            location.replace('./login-page');
+        });
+    }
+    
+});
+
+createBtn.addEventListener('click', () => {
+    location.replace('./create-page');
+});
+
+
+async function loadData() {
+    const posts = await fetchPosts();
+    for (let post of posts) {
+        const postDiv = renderPosts(post);
+        postListContainer.append(postDiv);
+    }
+}
+
+loadData();
+
