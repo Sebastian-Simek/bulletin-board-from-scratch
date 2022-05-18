@@ -3,11 +3,10 @@ import { renderPosts } from './render-utils.js';
 
 const loginBtn = document.getElementById('login');
 const createBtn = document.getElementById('create');
-const logOutBtn = document.getElementById('logout');
 const postListContainer = document.getElementById('display-div');
+
 window.addEventListener('load', async () => {
     const user = await getUser();
-    console.log(user);
     if (user) {
         loginBtn.textContent = 'LOGOUT';
         loginBtn.addEventListener('click', async () => {
@@ -22,11 +21,9 @@ window.addEventListener('load', async () => {
     
 });
 
-
 createBtn.addEventListener('click', () => {
     location.replace('./create-page');
 });
-
 
 
 async function loadData() {
