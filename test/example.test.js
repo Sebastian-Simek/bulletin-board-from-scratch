@@ -14,7 +14,6 @@ test('Testing renderPosts function', async (expect) => {
     const fetch = await fetchPosts();
     const actual = renderPosts(fetch[0]);
     //Expect
-    console.log(fetchPosts());
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
 });
