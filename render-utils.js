@@ -3,6 +3,11 @@ export function renderPosts(craigslist_posts) {
     
     const div = document.createElement('div');
     div.classList.add('render-div');
+
+    const button = document.createElement('button');
+    button.textContent = 'remove';
+    button.classList.add('remove-button');
+    button.setAttribute('id', 'remove');
     
     const pTitle = document.createElement('p');
     pTitle.textContent = craigslist_posts.title;
@@ -14,7 +19,7 @@ export function renderPosts(craigslist_posts) {
     pContact.textContent = craigslist_posts.contact;
 
 
-    div.append(pTitle, pDescription, pContact);
+    div.append(button, pTitle, pDescription, pContact);
     
     return div;
 }

@@ -1,6 +1,7 @@
-import { fetchPosts, logOut, getUser } from './fetch-utils.js';
+import { fetchPosts, logOut, getUser, removePosts } from './fetch-utils.js';
 import { renderPosts } from './render-utils.js';
 
+const removeBtn = document.getElementById('remove');
 const loginBtn = document.getElementById('login');
 const createBtn = document.getElementById('create');
 const postListContainer = document.getElementById('display-div');
@@ -18,8 +19,12 @@ window.addEventListener('load', async () => {
             location.replace('./login-page');
         });
     }
+    removeBtn.addEventListener('click', () => {
+        console.log('i clicked');
+    });
     
 });
+
 
 createBtn.addEventListener('click', () => {
     location.replace('./create-page');
@@ -36,3 +41,4 @@ async function loadData() {
 
 loadData();
 
+console.log(removePosts());
