@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>Login Page</title>
+</head>
+<header>
+    <h1>Welcome to the login page</h1>
+</header>
+<body>
+    <main id="main">
+        <div class="login-forms">
+            <h2>Sign in</h2>
+            <form id="sign-in">
+                <input type="email" name="email">Email
+                <input type="password" name="password">Password
+                <button>Sign in</button>
+            </form>
+        </div>
+        <div class="login-forms">
+            <h2>Sign up</h2>
+            <form id="sign-up">
+                <input type="email" name="email">Email
+                <input type="password" name="password">Password
+                <button>Sign up</button>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="./login-page.js"></script>
+</body>
+</html>
